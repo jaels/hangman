@@ -1,0 +1,137 @@
+
+body {
+    position: relative;
+}
+
+#canv {
+    left: 0px;
+    top: 0px;
+    border: 2px solid black;
+}
+
+
+.button {
+    position: relative;
+    background-color: #FFCC33;
+    border-radius: 30px 30px 30px 30px;
+    color: yellow;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 auto;
+    bottom: 300px;
+    left: 5%;
+    border: 2px solid #D2691E;
+    cursor: pointer;
+
+}
+#button-text {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    top: 0px;
+    color: #D2691E;
+}
+
+.hidden-button {
+    content: "START OVER"
+    position: relative;
+    background-color: #FFCC33;
+    border-radius: 30px 30px 30px 30px;
+    color: white;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 auto;
+    border: 2px solid #D2691E;
+}
+
+.hidden-button-text {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    top: 0px;
+    color: #D2691E;
+}
+
+.abc-big {
+    position: relative;
+    diplay: inline;
+    height: 400px;
+    width: 250px;
+    left: 35%;
+    bottom: 600px;
+    border: 2px solid black;
+
+}
+.abc {
+    position: relative;
+    diplay: inline;
+    height: 300px;
+    width: 250px;
+}
+
+
+.letter {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    z-index: 0;
+
+}
+
+
+#choose-letter {
+    text-align: center;
+    font-size: 20px;
+    color: red;
+}
+
+.guess {
+    position: absolute;
+    left: 60%;
+    bottom: 80%;
+}
+
+#textarea {
+    width: 300px;
+    font-size: 20px;
+}
+
+
+#underscored-word {
+    position: absolute;
+    display: inline-block;
+    height: 60px;
+    width: 800px;
+    border: 2px solid black;
+    left: 35%;
+    bottom: 50%;
+}
+
+.newDiv {
+    height: 30px;
+    width: 30px;
+    padding-bottom: 10px;
+    display: inline-block;
+    font-size: 40px;
+    color: black;
+    margin-right: 30px;
+    border-bottom: 3px solid black;
+    border-length: 20px;
+
+}
+
+.used-letter {
+color: red;
+}
+
+.crossover {
+    text-decoration:line-through;
+}
