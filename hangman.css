@@ -4,9 +4,10 @@ body {
 }
 
 #canv {
+    position: relative;
     left: 0px;
     top: 0px;
-    border: 2px solid black;
+/*    border: 2px solid black;*/
 }
 
 
@@ -63,9 +64,9 @@ body {
     diplay: inline;
     height: 400px;
     width: 250px;
-    left: 35%;
-    bottom: 600px;
-    border: 2px solid black;
+    left: 30%;
+    bottom: 550px;
+/*    border: 2px solid black;*/
 
 }
 .abc {
@@ -110,7 +111,7 @@ body {
     display: inline-block;
     height: 60px;
     width: 800px;
-    border: 2px solid black;
+/*    border: 2px solid black;*/
     left: 35%;
     bottom: 50%;
 }
@@ -134,4 +135,28 @@ color: red;
 
 .crossover {
     text-decoration:line-through;
+}
+
+#submit-button {
+    float: right;
+    left: 120px;
+    top: 70px;
+    position: relative;
+    background-color: #FFCC33;
+    border-radius: 30px 30px 30px 30px;
+    color: yellow;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 auto;
+    border: 2px solid #D2691E;
+    cursor: pointer;
+}
+
+#submit-text {
+    position: relative;
+    color: blue;
+    bottom: 8px;
 }
