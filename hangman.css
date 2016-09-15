@@ -62,11 +62,11 @@ body {
 .abc-big {
     position: relative;
     diplay: inline;
-    height: 400px;
+    height: 350px;
     width: 250px;
     left: 30%;
     bottom: 550px;
-/*    border: 2px solid black;*/
+    border: 2px solid black;
 
 }
 .abc {

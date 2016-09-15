@@ -3,11 +3,24 @@
 (function (){
     var countCorrect = 0;
     var fail = -1;
+    var word;
+    //    var wordArray = ["HELICOPTER","OMNIVORE","RESTAURANT","ENCYCLOPEDIA",
+    //    "PHILOSOPHY","AUTOIMMUNE","NETWORKING","METABOLISM","PSYCHOPATH",
+    //    "PRONUNCIATION","BODYBUILDING"];
 
-    var wordArray = ["HELICOPTER","OMNIVORE","RESTAURANT","ENCYCLOPEDIA",
-    "PHILOSOPHY","AUTOIMMUNE","NETWORKING","METABOLISM","PSYCHOPATH",
-    "PRONUNCIATION","BODYBUILDING"];
+    var word_a = new XMLHttpRequest;
 
+    word_a.open('GET', 'http://www.setgetgo.com/randomword/get.php?len=10');
+
+    word_a.send();
+
+    word_a.addEventListener('readystatechange', function() {
+        if (word_a.readyState == XMLHttpRequest.DONE) {
+            word = word_a.response.toUpperCase();
+
+        }
+
+    });
 
 
     var context = document.getElementById('canv').getContext('2d');
@@ -39,8 +52,7 @@
     function game () {
 
 
-
-        var word = wordArray[Math.floor(Math.random() * 10)];
+        //        var word = wordArray[Math.floor(Math.random() * 10)];
         var underscoredWord = document.getElementById("underscored-word");
         for (var i=0;i<word.length;i++){
             var newDiv = document.createElement("DIV");
@@ -49,7 +61,7 @@
 
             newDiv.appendChild(letterInDiv);
             underscoredWord.appendChild(newDiv);
-            underscoredWord.children[i].style.color = "white";
+            underscoredWord.children[i].style.color = "black";
             newDiv.classList.add("newDiv");
         }
 
@@ -57,6 +69,7 @@
         abc.addEventListener("click",
         function(e) {
             var letter = e.target.innerHTML;
+
             if(letter.length>1)
             {return;}
             e.target.classList.add("used-letter");
@@ -64,6 +77,7 @@
 
             for (var i=0;i<word.length;i++) {
                 if (letter===word[i]) {
+                    console.log("yes");
                     underscoredWord.children[i].style.color = "red";
                     countCorrect+=1;
                 }
