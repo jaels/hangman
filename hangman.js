@@ -1,14 +1,13 @@
 
-
 (function (){
     var countCorrect = 0;
     var fail = -1;
 
-    var wordArray = ["HELICOPTER","OMNIVORE","RESTAURANT","ENCYCLOPEDIA",
-    "PHILOSOPHY","AUTOIMMUNE","NETWORKING","METABOLISM","PSYCHOPATH",
-    "PRONUNCIATION","BODYBUILDING"];
+    var wordArray = ["CHINA","IRAN","USA","IRAQ",
+    "PAKISTAN","YEMEN","EGYPT","SOMALIA","CHAD","INDONESIA"];
 
 
+    var exec = [1000,977,28,26,326,8,22,25,10,14];
 
     var context = document.getElementById('canv').getContext('2d');
 
@@ -17,16 +16,20 @@
     context.strokeStyle = '#00000';
     context.lineWidth=5;
     context.beginPath();
-    context.moveTo(10,500);
-    context.lineTo(200,500);
-    context.moveTo(105,500);
-    context.lineTo(105,100);
-    context.lineTo(250,100);
-    context.lineTo(250,180);
-    context.moveTo(170,100);
-    context.lineTo(105,180);
-    context.moveTo(270,180);
+    context.moveTo(10,700);
+    context.lineTo(250,700);
+    context.moveTo(125,700);
+    context.lineTo(125,15);
+    context.lineTo(350,15);
+    context.lineTo(350,120);
+    context.moveTo(250,15);
+    context.lineTo(125,130);
+    context.moveTo(350,120);
+
     context.stroke();
+
+
+
 
 
     var startButton = document.getElementsByClassName('button')[0];
@@ -35,12 +38,18 @@
     });
 
 
-    //    game();
     function game () {
 
+        var startButton = document.getElementsByClassName('button')[0];
+        startButton.addEventListener("click", function () {
+            location.reload();
+    //        game();
+        });
 
 
-        var word = wordArray[Math.floor(Math.random() * 10)];
+
+        var number = Math.floor(Math.random() * 13);
+        var word = wordArray[number];
         var underscoredWord = document.getElementById("underscored-word");
         for (var i=0;i<word.length;i++){
             var newDiv = document.createElement("DIV");
@@ -49,7 +58,7 @@
 
             newDiv.appendChild(letterInDiv);
             underscoredWord.appendChild(newDiv);
-            underscoredWord.children[i].style.color = "white";
+            underscoredWord.children[i].style.color = "#DEB887";
             newDiv.classList.add("newDiv");
         }
 
@@ -67,11 +76,14 @@
                     underscoredWord.children[i].style.color = "red";
                     countCorrect+=1;
                 }
-                if (countCorrect===word.length)
-                {
+                if (countCorrect===word.length){
+                    for (var i=0;i<word.length;i++) {
+                        underscoredWord.children[i].style.color = "red";
+                    }
+                    extra();
                     setTimeout(function(){
-                        alert("GOOD JOB! YOU WIN!");
-                        startOver();
+                        alert ("GOOD JOB, YOU WIN!");
+                        setTimeout(function(){startOver();},1000);
                     },200);
                 }
             }
@@ -101,6 +113,10 @@
 
             if(guess.value.toUpperCase()==word)
             {
+                for (var i=0;i<word.length;i++) {
+                    underscoredWord.children[i].style.color = "red";
+                }
+                extra();
                 setTimeout(function(){
                     alert ("THAT'S CORRECT, YOU WIN!");
                     setTimeout(function(){startOver();},1000);
@@ -118,36 +134,42 @@
             }
         });
 
+        function extra() {
 
+            var extraInfo = document.getElementById("extra-info");
+            extraInfo.innerHTML = "Executed " + '<span class="span">' + exec[number] + '</span>' + " People in 2015";
+            extraInfo.classList.add("newInfoDiv");
 
-
+        }
 
     }
+
+
 
     function paintMan(fail) {
         var painting = [function() {
             context.beginPath();
-            context.arc(250,210,30,0,2*Math.PI);
+            context.arc(350,170,50,0,2*Math.PI);
             context.stroke();
         },function() {
-            context.moveTo(250,240);
-            context.lineTo(250,360);
+            context.moveTo(350,220);
+            context.lineTo(350,500);
             context.stroke();
         },
         function() {
-            context.lineTo(300,430);
+            context.lineTo(250,620);
             context.stroke();
         }, function() {
-            context.moveTo(250,360);
-            context.lineTo(200,430);
+            context.moveTo(350,500);
+            context.lineTo(450,620);
             context.stroke();
         }, function() {
-            context.moveTo(250,280);
-            context.lineTo(200,220);
+            context.moveTo(350,280);
+            context.lineTo(230,160);
             context.stroke();
         }, function() {
-            context.moveTo(250,280);
-            context.lineTo(300,220);
+            context.moveTo(350,280);
+            context.lineTo(470,160);
             context.stroke();
         }];
 
@@ -158,23 +180,8 @@
 
 
     function startOver() {
-        //        document.getElementById("button-text").innerHTML="START OVER";
-        //  startButton.addEventListener("click", function () {
         location.reload();
-
-        //    });
-
-
-
-
-        //Resets all your global variables
-        //Removes all your EventListeners ( seeing you have two you don't really have to make a list to loop through all of them )
-        //Calls the main game function when the player is ready to start again
-
     }
-
-
-
 
 
 })();

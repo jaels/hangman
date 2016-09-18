@@ -7,63 +7,67 @@
     <title>hangman</title>
 </head>
 <body>
-<canvas id="canv" width="400" height="600">
-</canvas>
+    <div id="headline">
+        <h1>HANGMAN</h1>
+        <h4>Guess the Country with the Capital Punishment</h4>
+        <h6>(And Get a <span style="color:red">Bonus</span> Info if you Win)</h6>
 
-<div class="abc-big">
-<h3 id="choose-letter">Choose a letter</h3>
-<div class="abc">
-<p class="letter" id="a">A</p>
-<p class="letter" id="b">B</p>
-<p class="letter" id="c">C</p>
-<p class="letter" id="d">D</p>
-<p class="letter" id="e">E</p>
-<p class="letter" id="f">F</p>
-<p class="letter" id="g">G</p>
-<p class="letter" id="h">H</p>
-<p class="letter" id="i">I</p>
-<p class="letter" id="j">J</p>
-<p class="letter" id="k">K</p>
-<p class="letter" id="l">L</p>
-<p class="letter" id="m">M</p>
-<p class="letter" id="n">N</p>
-<p class="letter" id="o">O</p>
-<p class="letter" id="p">P</p>
-<p class="letter" id="q">Q</p>
-<p class="letter" id="r">R</p>
-<p class="letter" id="s">S</p>
-<p class="letter" id="t">T</p>
-<p class="letter" id="u">U</p>
-<p class="letter" id="v">V</p>
-<p class="letter" id="w">W</p>
-<p class="letter" id="x">X</p>
-<p class="letter" id="y">Y</p>
-<p class="letter" id="z">Z</p>
-</div>
-</div>
-<div id="underscored-word">
+    </div>
+    <canvas id="canv" width="480" height="750">
+    </canvas>
 
-</div>
+    <div id="underscored-word">
 
-<div class="guess">
-    <div id="submit-button">
-<h4 id="submit-text">SUBMIT<h4>
-</div>
-    <h2 id="your-guess">What's your guess?</h2>
-<textarea id="textarea"></textarea>
-</div>
-
-
-<div class="button">
-    <h2 id="button-text">START</h2>
     </div>
 
-</div>
+    <div id="extra-info"></div>
 
-<div id="hidden-button">
-</div>
+    <div class="abc-big">
+        <h2 id="choose-letter">Choose a letter</h2>
+        <div class="abc">
+            <p class="letter">A</p>
+            <p class="letter">B</p>
+            <p class="letter">C</p>
+            <p class="letter">D</p>
+            <p class="letter">E</p>
+            <p class="letter">F</p>
+            <p class="letter">G</p>
+            <p class="letter">H</p>
+            <p class="letter">I</p>
+            <p class="letter">J</p>
+            <p class="letter">K</p>
+            <p class="letter">L</p>
+            <p class="letter">M</p>
+            <p class="letter">N</p>
+            <p class="letter">O</p>
+            <p class="letter">P</p>
+            <p class="letter">Q</p>
+            <p class="letter">R</p>
+            <p class="letter">S</p>
+            <p class="letter">T</p>
+            <p class="letter">U</p>
+            <p class="letter">V</p>
+            <p class="letter">W</p>
+            <p class="letter">X</p>
+            <p class="letter">Y</p>
+            <p class="letter">Z</p>
+        </div>
+    </div>
+
+    <div class="guess">
+        <h2 id="your-guess">What's your guess?</h2>
+        <textarea id="textarea"></textarea>
+        <div id="submit-button">
+            <h4 id="submit-text">SUBMIT<h4>
+            </div>
+
+        </div>
 
 
+        <div class="button">
+            <h2 id="button-text">START</h2>
+        </div>
+    </div>
 
     <script src = "hangman.js"></script>
 </body>
