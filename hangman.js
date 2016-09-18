@@ -48,7 +48,7 @@
 
 
 
-        var number = Math.floor(Math.random() * 13);
+        var number = Math.floor(Math.random() * 10);
         var word = wordArray[number];
         var underscoredWord = document.getElementById("underscored-word");
         for (var i=0;i<word.length;i++){
